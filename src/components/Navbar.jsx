@@ -1,8 +1,9 @@
-import {useState} from 'react';
+import {useState, useSyncExternalStore} from 'react';
 import { close, logo, menu } from '../assets';
 import { navLinks } from "../constants/index.js";
 
 const Navbar = () => {
+    useState(
     return (
         <nav className="w-full flex py-6 justify-between items-center navbar">
             <img src={logo} alt="hoobank"
@@ -21,6 +22,9 @@ const Navbar = () => {
 
                 ))}
             </ul>
+            <div className="sm:hidden flex flex-1 justify-end items_center">
+                <img src={toggle ? close : menu} />
+            </div>
         </nav>
     );
 };
